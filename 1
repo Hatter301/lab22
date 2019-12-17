@@ -1,18 +1,20 @@
-#include <fstream>
 #include <iostream>
+#include <fstream> 
 #include <string>
 using namespace std;
 int main()
 {
-    int i=0,l;
-    char s[50];
-    ifstream fin("krik dushi.txt");
-    fin.getline(s, 50);
-    fin.close();
-    while (s[i] != ' ')
+    int i = 0, l;
+    string s;
+    ifstream file;
+    file.open("krik dushi.txt");
+    getline(file, s);
+    l = s.size();
+    while ((s[i] != ' ') && (i < l))
         i++;
     i++;
-    for(i;i<50;i++)
-    cout<< s[i];
+    for (i; i < l; i++)
+        cout << s[i];
+    file.close();
     return 0;
 }
